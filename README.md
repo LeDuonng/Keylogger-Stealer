@@ -1,14 +1,15 @@
-# Keylogger
+# Keylogger by LeDuonng
 The project is in the process of development and testing
 
-Features:
+## Features:
 + Keylogger
 + Collect computer information
 + Collect data from clipboard
 + Screenshots Desktop 
 + Saved WiFi
 
-Developing:
+## Developing:
++ Put On Startup
 + Webcam
 + Based Browsers
 + AntiAnalysis 
@@ -27,3 +28,9 @@ Developing:
 + UAC Bypass
 + IP Information
 
+## Request the victim computer:
++ Windows 7+.
++ An active internet connection.
+
+## How to Build?
+=> click setup.bat file
