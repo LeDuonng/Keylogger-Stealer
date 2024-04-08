@@ -1,0 +1,14 @@
+(netsh wlan show profiles) |
+Select-String ": (.+)$" |
+ForEach-Object {
+    $name=$_.Matches.Groups[1].Value.Trim(); 
+    $_ 
+} |
+ForEach-Object {
+    $profileDetail = netsh wlan show profile name="$name" key=clear;
+    $profileDetail | Select-String "Key Content\s+: (.+)$" 
+} |
+ForEach-Object {
+    $pass=$_.Matches.Groups[1].Value.Trim(); 
+    [PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }
+} | Format-Table -AutoSize

