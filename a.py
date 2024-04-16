@@ -62,7 +62,7 @@ file_path = os.path.dirname(os.path.abspath(__file__)) + "\\"
 # Duyệt qua danh sách file
 for file_name in file_names:
     # Kiểm tra file có tồn tại hay không
-    if not os.path.exists(file_path + file_name):
+    if not os.path.exists(file_path + "\\Keylogger" + file_name):
         # Tạo file mới
         open(file_name, "w").close()
 
