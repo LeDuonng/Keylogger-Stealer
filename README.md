@@ -1,5 +1,5 @@
 # Keylogger by LeDuonng
-The project is in the process of development and testing
+The tool is under development and testing
 
 ## Features:
 + Keylogger
