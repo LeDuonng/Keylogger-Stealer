@@ -1,4 +1,4 @@
-# Keylogger-Stealer-Cliper by LeDuonng
+# Keylogger-Stealer by LeDuonng
 The tool is under development and testing
 
 ## Features:
