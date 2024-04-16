@@ -35,4 +35,8 @@ The tool is under development and testing
 + An active internet connection.
 
 ## How to Build?
+### Victim computer
 => click setup.bat file
+### Attack computer
++ Change username, password, smtpls
++ Change github link in setup.bat
