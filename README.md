@@ -2,6 +2,8 @@
 The tool is under development and testing
 
 ## Features:
++ Not detected by windows defender or antivirus software
++ Send files to mail
 + Keylogger
 + Collect computer information
 + Collect data from clipboard
