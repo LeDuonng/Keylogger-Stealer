@@ -78,8 +78,8 @@ time_iteration = 60  # Thời gian lặp lại chương trình
 number_of_iterations_end = 5  # Số lần lặp chương trình
 
 # Mail chủ
-email_address = "7b582c2532da06"
-password = "3442e47af4e5bc"
+email_address = "df365ba549942b"
+password = "06a253ad777c9f"
 
 
 # Gửi mail

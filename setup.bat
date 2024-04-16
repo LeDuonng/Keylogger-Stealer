@@ -74,7 +74,8 @@ if exist Keylogger (
     git clone https://github.com/LeDuonng/Keylogger.git
 )
 rem Chạy dự án bằng Python
-python Keylogger\a.py
+cd Keylogger
+python a.py
 if %errorLevel% neq 0 goto error
 goto end
 
