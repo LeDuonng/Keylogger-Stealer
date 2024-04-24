@@ -1,0 +1,7 @@
+Processor: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+System: Windows 10.0.22631
+Version: 10.0.22631
+Release: 11
+Machine: AMD64
+Hostname: LeDuong
+IP Address: 192.168.56.1
