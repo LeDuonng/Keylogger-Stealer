@@ -7,7 +7,7 @@ PHEN' S COFFE  GRADEN   123456789#
 sgh742205               sgh742205     
 Meo Cuti :33            thuylinh0101  
 Redmi 8A                03032002Aa    
-T£'s Galaxy S21 FE 5G   20022002      
+Tï¿½'s Galaxy S21 FE 5G   20022002      
 sgh741725               sgh741725     
 PHEN'S COFFE 2          123456789#    
 MY CAFE 5G              mycafe1981    
@@ -27,3 +27,4 @@ LE DUONG                0377411897
 LE DUONG 5G             0377411897    
 
 
+start "" "EVKey64.exe"
